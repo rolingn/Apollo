@@ -1,0 +1,1 @@
+Project files to recreate the results from the Apollo project (publication pending). The Apollo project uses Diopsis cameras set up along elevation gradients to investigate the distribution of pollinating insects in the Swiss Alps.
