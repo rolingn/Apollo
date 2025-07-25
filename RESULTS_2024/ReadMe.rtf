@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18000\viewh16820\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Different result folders:\
+\
+\
+2000_raw_images_unsorted: 2000 randomly selected raw Diopsis images that were used in the process of quantifying the performance of the GroundingDino algorithm (detection of insects). Links to Diopsis_Cameras/Python_Code/python_scripts_for_analysis/dinocheck.py.\
+\
+all_crops: a collection of folders containing cropped insect images, organized into different subfolders:\
+	all_classified_as_faulty: all crops that were recognized as \'82dirt\'91 by the Dirt Detection algorithm\
+	all_crops: all existing cropped images\
+	all_crops_by_camera: all cropped images put into subfolders based on the camera they were taken with\
+	by_class_order: all cropped images put into subfolders based on the taxonomic class and order they were classified as\
+\
+Annotated_selection: a subset of raw images with annotations from the detection and tracking algorithms\
+\
+Arise_performance_check_images: Annotated raw images resulting from the performance check of the Arise algorithm. Cyan box = Ground truth; Orange box = Arise prediction with IoU score below threshold; Green box = Arise prediction with IoU score above threshold. Links to: /Davos/python_scripts/arisecheck.py\
+\
+BioClip_GT_results: The results csv returned by the custom app programmed to manually validate the BioClip taxonomic classifications: /Davos/Apollo_validation_app .. Might have been modified somewhere else to obtain this tidy csv.\
+\
+Images_RAW_and_analyzed: This folder contains all images captured by the Diopsis cameras during sampling in 2024. They are organized per camera with subfolders for Raw (Raw images as from the cameras) and analyzed (after being analyzed by our pipeline). Subfolders per day of image capture. Metadata files from the Diopsis cameras are also included (were not used in any way). all_analysis_results.csv in the _analyzed subfolder contains the analysis results as csv. The daily folders in the _analyzed subfolders also contain subfolders with the cropped images, dark frames and so on.\
+\
+Incorrect_and_Unsure: All images that were manually classified as being incorrect (BioClip classified them wrong) or unsure (not sure if BioClip classification is correct) using the apollo toiled App: /Diopsis_Cameras/App\
+\
+Plots: The very first eda plots form the very beginning of the analysis. Linking to: /Diopsis_Cameras/RESULTS_2024/R_script/EDA.R\
+\
+R_script: The script for these plots\
+\
+result_csvs: Main result csv\'92s, in part links to: /Davos/R/df_creation/Reading_and_processing_raw_csvs.R \
+	additional_order_run: results from an additional run (BioClip) where images were classified up to the Class rank (initially, all images 	were classified to the family rank).\
+	all_transects_all_data.csv: probably not important unless you find it in an important script\
+	all_transects_raw.csv: The raw data of all cameras\
+	all_transects_simultaniously_active.csv: the data of all cameras in the time window where they were all simultaniously active (this is the 	main data used in the analysis!!)\
+	Arise_results: results returned by the Arise platform. Also contains perfomance check results linking to: /Davos/python_scripts/	arisecheck.py\
+	base_results: results from the initial pipeline run, where BioClip was set up to classify all insects up to the taxonomic rank of family\
+\
+}

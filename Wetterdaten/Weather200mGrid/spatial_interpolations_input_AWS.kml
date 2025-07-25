@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Folder>
+<name>My Simulation</name>
+<Style id="sty0">
+<LabelStyle>
+<color>ff0000ff</color>
+<scale>1</scale>
+</LabelStyle>
+</Style>
+<Placemark>
+<name>Braema1 (2191)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Braema_Slope (2191)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD RH TA TSS VW VW_MAX VW_SCAL</value></Data></ExtendedData>
+<Point><coordinates>9.848810, 46.786440, 2191</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>Braema2 (2252)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Braema_Ridge (2252)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD RH TA TS1 TS2 TS3 TSS VW VW_MAX VW_SCAL</value></Data></ExtendedData>
+<Point><coordinates>9.846810, 46.786730, 2252</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DAV1 (2890)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Chrachenhorn (2890)</description>
+<ExtendedData><Data name="fields"><value>DW RH TA VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.814310, 46.688510, 2890</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DAV2 (2558)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Bärentälli (2558)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TS1 TS2 TS3 TSG TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.819411, 46.698888, 2558</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DAV3 (2455)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Hanengretji (2455)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TS1 TS2 TS3 TSG TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.773990, 46.788833, 2455</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DAV4 (2330)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Frauentobel (2330)</description>
+<ExtendedData><Data name="fields"><value>DW HS RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.784702, 46.784194, 2330</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DMA4 (2556)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Dischma_moraine (2556)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD HS RECORD RH TA VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.944913, 46.701525, 2556</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>DMA6 (3033)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Dischma_ridge (3033)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD RH TA VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.950197, 46.693841, 3033</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>FLU2 (2394)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Flüelapass (2394)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.946445, 46.752712, 2394</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>KLO2 (2147)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Madrisa (2147)</description>
+<ExtendedData><Data name="fields"><value>DW HS ISWR PSUM RH RSWR TA TS1 TS2 TS3 TSG TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.873859, 46.909115, 2147</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>KLO3 (2299)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Gatschiefer (2299)</description>
+<ExtendedData><Data name="fields"><value>DW HS ISWR PSUM RH RSWR TA TS1 TS2 TS3 TSG TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.931672, 46.841271, 2299</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>LAR1_2 (1512)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davos::Laret-LAR1 (1512)</description>
+<ExtendedData><Data name="fields"><value>DW_1 DW_2 HS_1 HS_2 P PINT PSUM PSUM_TOT RH_1 RH_2 TA_1 TA_2 TSS VW_1 VW_2 VW_MAX_1 VW_MAX_2</value></Data></ExtendedData>
+<Point><coordinates>9.871576, 46.845014, 1512</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>LAR1_tp (1512)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davos::Laret_temperatures (1512)</description>
+<ExtendedData><Data name="fields"><value>TG_1 TG_2 TG_3 TS_1 TS_2 TS_3</value></Data></ExtendedData>
+<Point><coordinates>9.871576, 46.845014, 1512</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>LAR2_rad (1512)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davo::Laret_radiation (1512)</description>
+<ExtendedData><Data name="fields"><value>ILWR ISWR OLWR RSWR</value></Data></ExtendedData>
+<Point><coordinates>9.871576, 46.845014, 1512</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>PAR2_2 (2290)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Kreuzweg (2290)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.804844, 46.851725, 2290</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>SLF2 (1563)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davos (1563)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TSG TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.848265, 46.812767, 1563</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>STB2_2 (2091)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davos::Stillberg_STB2 (2091)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD HS ILWR ISWR P PSUM RH_ROT RH_THY TA_ROT TA_THY TSG TS_10 TS_20 TS_50 VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.867160, 46.773573, 2091</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>TUG1 (1964)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Davos::Tschuggen (1964)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD ILWR ISWR ISWR_VUE LIGHTNING LIGHTNING_DIST OLWR P PSAT PSUM RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.922674, 46.782993, 1964</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WAN5 (2417)</name>
+<styleUrl>#sty0</styleUrl>
+<description>WAN5 (2417)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD HS ILWR ISWR OLWR RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.786397, 46.805621, 2417</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WAN6_2 (2320)</name>
+<styleUrl>#sty0</styleUrl>
+<description>WAN6_2 (2320)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD HS RH TA VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.783270, 46.800240, 2320</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WAN7 (2399)</name>
+<styleUrl>#sty0</styleUrl>
+<description>WAN7 (2399)</description>
+<ExtendedData><Data name="fields"><value>DW DW_SD HS_RAW ILWR ISWR OLWR RH RSWR TA TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.788029, 46.807577, 2399</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WFJ1 (2691)</name>
+<styleUrl>#sty0</styleUrl>
+<description>WFJ1 (2691)</description>
+<ExtendedData><Data name="fields"><value>DW ILWR ISWR PSUM P_SEA RH TA TD VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.806384, 46.833323, 2691</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WFJ2 (2536)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Weissfluhjoch (2536)</description>
+<ExtendedData><Data name="fields"><value>DW HS PSUM RH RSWR TA TS1 TS2 TS3 TSG TSOIL10 TSOIL30 TSOIL50 TSS VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.809289, 46.829638, 2536</coordinates></Point>
+</Placemark>
+<Placemark>
+<name>WFJ_MS (2540)</name>
+<styleUrl>#sty0</styleUrl>
+<description>Weissfluhjoch_meteoSchweiz (2540)</description>
+<ExtendedData><Data name="fields"><value>DW ILWR ISWR P PSUM RH TA VW VW_MAX</value></Data></ExtendedData>
+<Point><coordinates>9.809340, 46.829620, 2540</coordinates></Point>
+</Placemark>
+</Folder>
+</kml>

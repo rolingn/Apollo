@@ -1,0 +1,4 @@
+python classify/predict.py --name camtrap1 --source "...\Pictures\20240626\cropped" --weights "insect-detect-ml-main/models/efficientnet-b0_imgsz128.onnx" --img 128 --sort-top1 --sort-prob --concat-csv
+
+
+!python C:/Users/rolingni/AppData/Local/anaconda3/envs/InsectDetectSAM/yolov5-cls/classify/predict.py --name kleiner_test --source {cropped_subfolder} --weights "C:/Users/rolingni/AppData/Local/anaconda3/envs/InsectDetectSAM/yolov5-cls/insect-detect-ml-main/models/efficientnet-b0_imgsz128.onnx" --sort-top1 --sort-prob --concat-csv

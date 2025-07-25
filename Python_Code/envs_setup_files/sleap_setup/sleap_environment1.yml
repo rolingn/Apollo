@@ -1,0 +1,16 @@
+name: sleap
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - matplotlib
+  - opencv
+  - tensorflow
+  - pip
+  - pip:
+      - sleap

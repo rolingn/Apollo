@@ -1,0 +1,19 @@
+#python == 3.12.4
+appnope
+fqdn
+gitpython
+isoduration
+jsonpointer
+jupyter
+onnxruntime
+onnxsim
+pexpect
+pip-chill
+plotly
+scikit-learn
+thop
+transformers
+ultralytics
+uri-template
+webcolors
+pybioclip

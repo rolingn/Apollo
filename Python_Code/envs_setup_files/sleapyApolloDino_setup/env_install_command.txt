@@ -1,0 +1,35 @@
+## Creating the sleapyApolloDino environment (main pipeline lives here):
+
+## First install option:
+conda env create -f sleapyApolloDino_environment.yml
+
+
+## Second option:
+
+conda create -n sleapyApolloDino python == 3.12.4
+
+
+# Activate the environment after creating it:
+conda activate sleapyApolloDino
+
+
+# Navigate to the environment folder with:
+# Mac:
+cd $CONDA_PREFIX
+# Windows:
+cd %CONDA_PREFIX%
+
+
+# Find this folder and move the contents of the sleapyApolloDino_setup folder to the sleapyApolloDino environment folder. Printing the following in the terminal might help finding the sleapyApolloDino environment folder:
+# Mac:
+echo $CONDA_PREFIX
+# Windows:
+echo %CONDA_PREFIX%
+
+
+# Install the requirements:
+conda install pip
+pip install -r requirements.txt
+
+
+# The setup should be complete. You can close the terminal. Additional 'pip install' calls might be necessary if packages are missing.

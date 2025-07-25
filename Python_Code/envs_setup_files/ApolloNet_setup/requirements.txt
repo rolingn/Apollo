@@ -1,0 +1,14 @@
+#python == 3.9.19
+fqdn
+isoduration
+jaraco.text
+jsonpointer
+jupyter
+opencv-python
+ordered-set
+pip-chill
+scikit-learn
+seaborn
+tensorflow
+uri-template
+webcolors

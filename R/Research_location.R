@@ -1,0 +1,135 @@
+## Libraries
+library(sf)
+library(ggplot2)
+library(dplyr)
+library(terra)
+library(patchwork)
+library(ggspatial)
+
+
+setwd("github")
+world_map <- st_read("GIS/CNTR_RG_20M_2024_3035/CNTR_RG_20M_2024_3035.shp")
+Schweiz <-  world_map[42, ]
+Davos <- data.frame(lon = 9.833477, lat = 46.802128)
+Davos <- st_as_sf(Davos, coords = c("lon", "lat"), crs = 4326)
+Davos <- st_transform(Davos, coords = c("x", "y"), crs = 3035)
+
+# Set zoom limits around the point
+Davos_coords <- st_coordinates(Davos)
+
+## Für Zoom Rechteck:
+center <- data.frame(lon = 9.8, lat = 46.75)
+center <- st_as_sf(center, coords = c("lon", "lat"), crs = 4326)
+center <- st_transform(center, coords = c("x", "y"), crs = 3035)
+center_Coords <- st_coordinates(center)
+buffer <-10000  # Zoom buffer in meters (e.g., 30 km)
+xlim <- c(center_Coords[1] - buffer, center_Coords[1] + buffer)
+ylim <- c(center_Coords[2] - buffer, center_Coords[2] + buffer)
+bbox_europe <- st_bbox(c(xmin = xlim[1], ymin = ylim[1], xmax = xlim[2], ymax = ylim[2]), 
+                       crs = st_crs(world_map))
+bbox_df <- data.frame(
+  xmin = bbox_europe["xmin"],
+  xmax = bbox_europe["xmax"],
+  ymin = bbox_europe["ymin"],
+  ymax = bbox_europe["ymax"]
+)
+
+buffer_europe <- 1000000  # Zoom buffer in meters (e.g., 50 km)
+xlim_europe <- c(Davos_coords[1] - buffer_europe, Davos_coords[1] + buffer_europe)
+ylim_europe <- c(Davos_coords[2] - buffer_europe, Davos_coords[2] + buffer_europe)
+
+Schweiz_centroid <- st_centroid(Schweiz)
+Schweiz_coords <- st_coordinates(Schweiz_centroid)
+
+# Add a label for the country
+Schweiz_label <- data.frame(
+  x = Schweiz_coords[1],  # X coordinate (centroid)
+  y = Schweiz_coords[2],  # Y coordinate (centroid)
+  label = "Switzerland"    # Replace with actual country name if needed
+)
+
+Davos_label <- data.frame(
+  x = Davos_coords[1],  # X coordinate in EPSG:3035
+  y = Davos_coords[2],  # Y coordinate in EPSG:3035
+  label = "Davos"       # Text to display
+)
+
+europe <- ggplot()+
+  theme_classic()+
+  geom_sf(data = world_map, linewidth = .2, col = "gray50", fill = "gray98")+
+  geom_sf(data = Schweiz, linewidth = .5, col = "black", fill = "gray92")+
+  geom_rect(data = bbox_df, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), 
+            color = "black", fill = NA, linewidth = .5) +
+  coord_sf(xlim = xlim_europe, ylim = ylim_europe) +
+  annotation_scale(location = "bl", height = unit(.15, "cm")) +
+  annotation_north_arrow(location = "br", which_north = "false", height = unit(.7, "cm"), width = unit(.7, "cm"), style = north_arrow_fancy_orienteering) +
+  labs(x = "", y = "")+
+  theme(strip.background = element_blank(),
+        strip.text = element_blank(),
+        text = element_text(size = 15))
+
+europe
+
+elevation <- st_read("GIS/DHM25_BM_SHP/dhm25_l/dhm25_l.shp")
+
+center <- data.frame(lon = 9.8, lat = 46.75)
+center <- st_as_sf(center, coords = c("lon", "lat"), crs = 4326)
+center <- st_transform(center, crs = 21781)
+center_Coords <- st_coordinates(center)
+
+buffer <-10000  # Zoom buffer in meters (e.g., 30 km)
+xlim <- c(center_Coords[1] - buffer, center_Coords[1] + buffer)
+ylim <- c(center_Coords[2] - buffer, center_Coords[2] + buffer)
+bbox <- st_bbox(c(xmin = xlim[1], ymin = ylim[1], xmax = xlim[2], ymax = ylim[2]), 
+                crs = st_crs(elevation))
+
+elevation <- st_crop(elevation, bbox)
+
+Davos_label <- st_as_sf(data.frame(
+  lon = 9.833477, 
+  lat = 46.802128, 
+  label = "Davos"
+), coords = c("lon", "lat"), crs = 4326)
+
+sites <- data.frame(
+  site = c("Weissfluhjoch lower", "Weissfluhjoch middle", "Weissfluhjoch upper", 
+           "Jatzhorn lower", "Jatzhorn middle", "Jatzhorn upper",
+           "Monstein lower", "Monstein middle", "Monstein upper"),
+  lon = c(9.848270, 9.827073, 9.809941,
+          9.812109, 9.832254, 9.857228,
+          9.773948, 9.787402, 9.767094),
+  lat = c(46.812754, 46.817695, 46.829333,
+          46.775071, 46.769974, 46.760840,
+          46.730245, 46.690697, 46.677097),
+  Transect = c("Weissfluhjoch", "Weissfluhjoch", "Weissfluhjoch",
+               "Jatzhorn", "Jatzhorn", "Jatzhorn",
+               "Monstein", "Monstein", "Monstein"),
+  Altitude = c("1563", "2102", "2540",
+               "1532", "2079", "2463",
+               "1427", "1952", "2632")
+)
+
+write.csv(sites, "/github/Camera_coords.csv", row.names = FALSE)
+
+sf_sites <- st_as_sf(sites, coords = c("lon", "lat"), crs = 4326)
+
+sites_map <- ggplot()+
+  theme_classic()+
+  geom_sf(data = elevation, linewidth = .1, color = "gray50")+
+  geom_sf(data = sf_sites, size = 3, aes(shape = Transect)) +
+  geom_sf_label(data = Davos_label, aes(label = label), size = 3.5, color = "black", fill = "white") +
+  geom_sf_label(data = sf_sites, aes(label = Altitude), size = 3 ,color = "white", fill = "black", nudge_x = 0, nudge_y = 700) +
+  labs(x = "", y = "") +
+  annotation_scale(location = "bl", height = unit(.15, "cm")) +
+  annotation_north_arrow(location = "br", which_north = "false", height = unit(.7, "cm"), width = unit(.7, "cm"), style = north_arrow_fancy_orienteering) +
+  theme(strip.background = element_blank(),
+        strip.text = element_blank(),
+        text = element_text(size = 15)) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0))
+
+sites_map
+
+europe + sites_map
+ggsave("Plots/Sites_with_alt.png", width = 12, height = 6, dpi = 300)
+  

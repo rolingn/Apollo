@@ -1,0 +1,11 @@
+gradio
+torchvision
+transformers
+opencv-python
+Pillow
+numpy
+requests
+matplotlib
+ultralytics
+onnxruntime
+efficientnet
